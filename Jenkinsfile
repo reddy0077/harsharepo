@@ -8,9 +8,11 @@ pipeline {
     }
     agent any
     stages {
-        stage('Cloning our Git') {
+        stage('Building our image') {
             steps {
-                git 'https://github.com/reddy0077/harsharepo.git'
+                script {
+                    dockerImage = docker.build registry + ":v$BUILD_NUMBER"
+                }
             }
         }
         stage('Push Image To DockerHUB') {
