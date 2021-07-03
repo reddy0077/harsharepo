@@ -7,12 +7,12 @@ pipeline {
         dockerImage = ''
     }
     agent any
-    stages {
+     /* stages {
         stage('Cloning our Git') {
             steps {
                 git 'https://github.com/reddy0077/harsharepo.git'
             }
-        }
+        } */
         stage('Building our image') {
             steps {
                 script {
